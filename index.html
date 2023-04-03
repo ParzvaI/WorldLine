@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function validateForm() {
+        
+        var Fname = document.forms["student"]["First Name"].value;
+        if (Fname == "") {
+            alert("First Name must be filled out");
+            return false;
+        }
+        var Lname = document.forms["student"]["Last Name"].value;
+        if (Lname == "") {
+            alert("Last Name must be filled out");
+            return false;
+        }
+        var email = document.forms["student"]["E-mail"].value;
+        if (email == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+        var num = document.forms["student"]["Phone number"].value;
+        //console.log(num);
+        if (num<1000000000 || num>9999999999) {
+            alert("Please enter a valid Phone Number.");
+            return false;
+        }
+        
+        var dob = document.forms["student"]["Date of Birth"].value;
+        console.log(dob);
+        if (dob=="") {
+            alert("Please enter Date of Birth");
+            return false;
+        }
+        
+        var ad1 = document.forms["student"]["Address Line 1"].value;
+        if (ad1 == "") {
+            alert("Address Line 1 must be filled out");
+            return false;
+        }
+        var ad2 = document.forms["student"]["Address Line 2"].value;
+        if (ad2 == "") {
+            alert("Address Line 2 must be filled out");
+            return false;
+        }
+        var City = document.forms["student"]["City"].value;
+        if (email == "") {
+            alert("City must be filled out");
+            return false;
+        }
+        var State = document.forms["student"]["State"].value;
+        if (State == "") {
+            alert("State must be filled out");
+            return false;
+        }
+        
+        var pcode = document.forms["student"]["Postal Code"].value;
+        //console.log(pcode);
+        if (pcode < 100000 || pcode >999999) {
+            alert("Enter a valid Postal Code");
+            return false;
+        }
+        var Country = document.forms["student"]["Country"].value;
+        if (Country == "") {
+            alert("Country must be filled out");
+            return false;
+        }
+
+        //alert("Wait");
+        
+    }
+</script>
+<body>
+    <h1>Student Information</h1>
+    <form name="student" onsubmit="validateForm()">
+        <p>First name     : 
+        <input type="text" name="First Name" placeholder="First name">
+        </p>
+        <p>Last name      : <input type="text" name="Last Name" placeholder="Last name">
+        </p>
+        <p>E-mail Id      :
+        <input type="email" name="E-mail" placeholder="E-mail Address">
+        </p>
+        <p>Phone No      :
+        <input type="number" name="Phone number" placeholder="Phone Number">
+        </p>
+        <p>Date of Birth  :
+        <input type="date" name="Date of Birth" placeholder="DoB">
+        </p>
+        <p>Gender : 
+        <input type="radio" name="Male" placeholder="Gender">Male</input>
+        <input type="radio" name="Female" placeholder="Gender">Female</input>
+        <input type="radio" name="Other" placeholder="Gender">Other</input>
+        <p>Address Line 1 :
+        <input type="text" name="Address Line 1" placeholder="Address Line 1">
+        </p>
+        <p>Address Line 2 : 
+        <input type="text" name="Address Line 2" placeholder="Address Line 2">
+        </p>
+        <p>City : 
+        <input type="text" name="City" placeholder="City Name">
+        </p>
+        <p>State : 
+        <input type="text" name="State" placeholder="State Name">
+        </p>
+        <p>Postal Code : 
+        <input type="number" name="Postal Code" placeholder="Postal Code">
+        </p>
+        <p>Country : 
+        <input type="text" name="Country" placeholder="Country Name">
+        </p >
+        <input type="submit" name="submit">
+    </form>
+    
+</body>
+</html>
